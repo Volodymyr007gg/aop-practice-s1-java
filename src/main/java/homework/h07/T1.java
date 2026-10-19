@@ -1,20 +1,16 @@
-package homework.h06;
+package homework.h07;
 
 // base
-// https://leetcode.com/problems/reverse-words-in-a-string-iii/
+https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 public class T1 {}
 class Solution {
-    public boolean isAnagram(String s, String t) {
-        if (s.length() != t.length()) return false;
-
-        int[] count = new int[26];
-        for (int i = 0; i < s.length(); i++) {
-            count[s.charAt(i) - 'a']++;
-            count[t.charAt(i) - 'a']--;
+    public List<String> fizzBuzz(int n) {
+        List<String> result = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            if (i % 15 == 0) result.add("FizzBuzz");
+            else if (i % 3 == 0) result.add("Fizz");
+            else if (i % 5 == 0) result.add("Buzz");
+            else result.add(String.valueOf(i));
         }
-        for (int c : count) {
-            if (c != 0) return false;
-        }
-        return true;
+        return result;
     }
-}
