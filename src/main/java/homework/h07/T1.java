@@ -1,7 +1,7 @@
 package homework.h07;
 
 // base
-https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+// https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 public class T1 {}
 class Solution {
     public List<String> fizzBuzz(int n) {
