@@ -1,24 +1,16 @@
-package homework.h06;
+package homework.h07;
 
 // advanced
-// https://leetcode.com/problems/string-to-integer-atoi/
+// https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 public class T2 {}
 class Solution {
-    public boolean isPalindrome(String s) {
-        int left = 0;
-        int right = s.length() - 1;
-
-        while (left < right) {
-            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
-                left++;
-            }
-            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
-                right--;
-            }
-            if (Character.toLowerCase(s.charAt(left))
-                    != Character.toLowerCase(s.charAt(right))) {
-                return false;
-            }
-            left++;
-            right--;
+    public int numberOfSteps(int num) {
+        int steps = 0;
+        while (num != 0) {
+            if (num % 2 == 0) num /= 2;
+            else num -= 1;
+            steps++;
         }
+        return steps;
+    }
+}
