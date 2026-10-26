@@ -1,15 +1,18 @@
-package homework.h03;
+package homework.h09;
 
 // advanced
-// https://leetcode.com/problems/reverse-integer/
+// https://leetcode.com/problems/number-of-good-pairs/
 public class T2 {}
 class Solution {
-    public int differenceOfSums(int n, int m) {
-        int result = 0;
-        for (int i = 1; i <= n; i++) {
-            if (i % m == 0) result -= i;
-            else result += i;
+    public int numIdenticalPairs(int[] nums) {
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
         }
-        return result;
+        return count;
     }
 }
