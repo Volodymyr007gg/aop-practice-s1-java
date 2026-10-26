@@ -1,16 +1,23 @@
-package homework.h03;
+package homework.h09;
 
 // base
-// https://leetcode.com/problems/roman-to-integer/
+// https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 public class T1 {}
 class Solution {
-    public double average(int[] salary) {
-        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, sum = 0;
-        for (int s : salary) {
-            sum += s;
-            min = Math.min(min, s);
-            max = Math.max(max, s);
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int max = findMax(candies);
+        List<Boolean> result = new ArrayList<>();
+        for (int c : candies) {
+            result.add(c + extraCandies >= max);
         }
-        return (double) (sum - min - max) / (salary.length - 2);
+        return result;
+    }
+
+    private int findMax(int[] arr) {
+        int max = arr[0];
+        for (int x : arr) {
+            if (x > max) max = x;
+        }
+        return max;
     }
 }
